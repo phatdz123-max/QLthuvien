@@ -1,0 +1,35 @@
+# ===============================
+# VISUAL STUDIO / .NET IGNORE
+# ===============================
+
+.vs/
+bin/
+obj/
+packages/
+*.user
+*.suo
+*.dbmdl
+*.pdb
+*.ldf
+*.mdf
+*.log
+*.cache
+*.tmp
+*.bak
+*.exe
+*.dll
+
+# Backup or build folders
+[Bb]in/
+[Oo]bj/
+TestResults/
+_ReSharper*/
+*.aps
+*.ncb
+*.res
+*.sdf
+*.opensdf
+*.ipch
+*.tlog
+*.lastbuildstate
+*.FileListAbsolute.txt
