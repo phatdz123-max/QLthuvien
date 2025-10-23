@@ -51,7 +51,9 @@ namespace QLTV
                 {
                     MessageBox.Show("TÊN ĐĂNG NHẬP HOẶC MẬT KHẨU KHÔNG CHÍNH XÁC!", "LỖI", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
+            this.Close();
         }
 
         private void lbldangky_Click(object sender, EventArgs e)

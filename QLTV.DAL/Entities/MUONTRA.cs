@@ -10,7 +10,8 @@ namespace QLTV.DAL.Entities
     public partial class MUONTRA
     {
         [Key]
-        public int MaMuonTra { get; set; }
+        [StringLength(10)]
+        public string MaMuonTra { get; set; }
 
         [Required]
         [StringLength(10)]

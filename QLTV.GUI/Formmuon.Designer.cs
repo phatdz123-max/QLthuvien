@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formmuon));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMuon = new System.Windows.Forms.DataGridView();
             this.btnthem = new Guna.UI2.WinForms.Guna2Button();
             this.btnsua = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -38,8 +38,6 @@
             this.dtpngaymuon = new System.Windows.Forms.DateTimePicker();
             this.txtsoluong = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txttensach = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtmasach = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,17 +45,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMuon)).BeginInit();
             this.frmmuon.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvMuon
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(56, 250);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(793, 210);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMuon.Location = new System.Drawing.Point(129, 251);
+            this.dgvMuon.Name = "dgvMuon";
+            this.dgvMuon.ReadOnly = true;
+            this.dgvMuon.Size = new System.Drawing.Size(643, 210);
+            this.dgvMuon.TabIndex = 1;
+            this.dgvMuon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMuon_CellClick);
             // 
             // btnthem
             // 
@@ -76,6 +77,7 @@
             this.btnthem.Size = new System.Drawing.Size(71, 35);
             this.btnthem.TabIndex = 2;
             this.btnthem.Text = "Thêm";
+            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // btnsua
             // 
@@ -94,6 +96,7 @@
             this.btnsua.Size = new System.Drawing.Size(71, 35);
             this.btnsua.TabIndex = 2;
             this.btnsua.Text = "Sửa";
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // guna2Button3
             // 
@@ -112,18 +115,18 @@
             this.guna2Button3.Size = new System.Drawing.Size(71, 35);
             this.guna2Button3.TabIndex = 2;
             this.guna2Button3.Text = "Xóa";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // frmmuon
             // 
             this.frmmuon.BorderColor = System.Drawing.Color.LimeGreen;
             this.frmmuon.BorderRadius = 20;
             this.frmmuon.BorderThickness = 3;
+            this.frmmuon.Controls.Add(this.guna2CircleButton1);
             this.frmmuon.Controls.Add(this.dtpngaytra);
             this.frmmuon.Controls.Add(this.dtpngaymuon);
             this.frmmuon.Controls.Add(this.txtsoluong);
             this.frmmuon.Controls.Add(this.label3);
-            this.frmmuon.Controls.Add(this.txttensach);
-            this.frmmuon.Controls.Add(this.label6);
             this.frmmuon.Controls.Add(this.txtmasach);
             this.frmmuon.Controls.Add(this.label2);
             this.frmmuon.Controls.Add(this.label5);
@@ -140,7 +143,7 @@
             // dtpngaytra
             // 
             this.dtpngaytra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpngaytra.Location = new System.Drawing.Point(416, 133);
+            this.dtpngaytra.Location = new System.Drawing.Point(417, 92);
             this.dtpngaytra.Name = "dtpngaytra";
             this.dtpngaytra.Size = new System.Drawing.Size(200, 20);
             this.dtpngaytra.TabIndex = 13;
@@ -148,14 +151,14 @@
             // dtpngaymuon
             // 
             this.dtpngaymuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpngaymuon.Location = new System.Drawing.Point(416, 95);
+            this.dtpngaymuon.Location = new System.Drawing.Point(417, 54);
             this.dtpngaymuon.Name = "dtpngaymuon";
             this.dtpngaymuon.Size = new System.Drawing.Size(200, 20);
             this.dtpngaymuon.TabIndex = 14;
             // 
             // txtsoluong
             // 
-            this.txtsoluong.Location = new System.Drawing.Point(416, 53);
+            this.txtsoluong.Location = new System.Drawing.Point(160, 131);
             this.txtsoluong.Name = "txtsoluong";
             this.txtsoluong.Size = new System.Drawing.Size(118, 22);
             this.txtsoluong.TabIndex = 9;
@@ -164,28 +167,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(337, 53);
+            this.label3.Location = new System.Drawing.Point(81, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Số Lương";
-            // 
-            // txttensach
-            // 
-            this.txttensach.Location = new System.Drawing.Point(160, 127);
-            this.txttensach.Name = "txttensach";
-            this.txttensach.Size = new System.Drawing.Size(118, 22);
-            this.txttensach.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(73, 133);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 16);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Tên Sách";
             // 
             // txtmasach
             // 
@@ -208,7 +194,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(337, 137);
+            this.label5.Location = new System.Drawing.Point(338, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 16);
             this.label5.TabIndex = 6;
@@ -225,7 +211,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(325, 95);
+            this.label4.Location = new System.Drawing.Point(326, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 16);
             this.label4.TabIndex = 7;
@@ -253,6 +239,22 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Mã Độc Giả";
             // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton1.Image")));
+            this.guna2CircleButton1.Location = new System.Drawing.Point(507, 119);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(37, 34);
+            this.guna2CircleButton1.TabIndex = 9;
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
+            // 
             // Formmuon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,10 +264,11 @@
             this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.btnsua);
             this.Controls.Add(this.btnthem);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvMuon);
             this.Name = "Formmuon";
             this.Text = "Formmuon";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Formmuon_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMuon)).EndInit();
             this.frmmuon.ResumeLayout(false);
             this.frmmuon.PerformLayout();
             this.ResumeLayout(false);
@@ -273,7 +276,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMuon;
         private Guna.UI2.WinForms.Guna2Button btnthem;
         private Guna.UI2.WinForms.Guna2Button btnsua;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
@@ -282,8 +285,6 @@
         private System.Windows.Forms.DateTimePicker dtpngaymuon;
         private System.Windows.Forms.TextBox txtsoluong;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txttensach;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtmasach;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
@@ -291,5 +292,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
     }
 }

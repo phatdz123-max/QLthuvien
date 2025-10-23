@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formtimkiemsach));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSach = new System.Windows.Forms.DataGridView();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnxoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnsua = new Guna.UI2.WinForms.Guna2Button();
             this.btntim = new Guna.UI2.WinForms.Guna2Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cboTimKiemTheo = new System.Windows.Forms.ComboBox();
+            this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSach)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvSach
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(64, 249);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(779, 213);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSach.Location = new System.Drawing.Point(64, 249);
+            this.dgvSach.Name = "dgvSach";
+            this.dgvSach.Size = new System.Drawing.Size(779, 213);
+            this.dgvSach.TabIndex = 1;
             // 
             // guna2CustomGradientPanel1
             // 
@@ -59,8 +59,8 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.btnxoa);
             this.guna2CustomGradientPanel1.Controls.Add(this.btnsua);
             this.guna2CustomGradientPanel1.Controls.Add(this.btntim);
-            this.guna2CustomGradientPanel1.Controls.Add(this.comboBox1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.textBox1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.cboTimKiemTheo);
+            this.guna2CustomGradientPanel1.Controls.Add(this.txtTuKhoa);
             this.guna2CustomGradientPanel1.Controls.Add(this.label3);
             this.guna2CustomGradientPanel1.Controls.Add(this.label2);
             this.guna2CustomGradientPanel1.Controls.Add(this.label1);
@@ -81,7 +81,7 @@
             this.btnxoa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnxoa.ForeColor = System.Drawing.Color.White;
             this.btnxoa.Image = ((System.Drawing.Image)(resources.GetObject("btnxoa.Image")));
-            this.btnxoa.Location = new System.Drawing.Point(230, 127);
+            this.btnxoa.Location = new System.Drawing.Point(256, 127);
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(63, 35);
             this.btnxoa.TabIndex = 3;
@@ -99,11 +99,12 @@
             this.btnsua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnsua.ForeColor = System.Drawing.Color.White;
             this.btnsua.Image = ((System.Drawing.Image)(resources.GetObject("btnsua.Image")));
-            this.btnsua.Location = new System.Drawing.Point(135, 127);
+            this.btnsua.Location = new System.Drawing.Point(155, 127);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(63, 35);
             this.btnsua.TabIndex = 3;
             this.btnsua.Text = "Sửa";
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btntim
             // 
@@ -122,21 +123,22 @@
             this.btntim.Size = new System.Drawing.Size(63, 35);
             this.btntim.TabIndex = 3;
             this.btntim.Text = "Tìm";
+            this.btntim.Click += new System.EventHandler(this.btntim_Click);
             // 
-            // comboBox1
+            // cboTimKiemTheo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(155, 96);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cboTimKiemTheo.FormattingEnabled = true;
+            this.cboTimKiemTheo.Location = new System.Drawing.Point(155, 96);
+            this.cboTimKiemTheo.Name = "cboTimKiemTheo";
+            this.cboTimKiemTheo.Size = new System.Drawing.Size(121, 21);
+            this.cboTimKiemTheo.TabIndex = 2;
             // 
-            // textBox1
+            // txtTuKhoa
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtTuKhoa.Location = new System.Drawing.Point(155, 53);
+            this.txtTuKhoa.Name = "txtTuKhoa";
+            this.txtTuKhoa.Size = new System.Drawing.Size(121, 20);
+            this.txtTuKhoa.TabIndex = 1;
             // 
             // label3
             // 
@@ -176,10 +178,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 493);
             this.Controls.Add(this.guna2CustomGradientPanel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvSach);
             this.Name = "Formtimkiemsach";
             this.Text = "Formtimkiem";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Formtimkiemsach_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSach)).EndInit();
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -187,12 +190,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSach;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2Button btnxoa;
         private Guna.UI2.WinForms.Guna2Button btntim;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cboTimKiemTheo;
+        private System.Windows.Forms.TextBox txtTuKhoa;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

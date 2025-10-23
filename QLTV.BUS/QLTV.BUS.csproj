@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocGiaBUS.cs" />
     <Compile Include="FormManagerBUS.cs" />
+    <Compile Include="MuonTraBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SachBUS.cs" />
   </ItemGroup>

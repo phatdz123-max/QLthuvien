@@ -10,6 +10,7 @@ namespace QLTV.DAL.Entities
         public Model1()
             : base("name=Model1")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         public virtual DbSet<DOCGIA> DOCGIAs { get; set; }

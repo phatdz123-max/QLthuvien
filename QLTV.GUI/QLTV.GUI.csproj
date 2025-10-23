@@ -92,6 +92,12 @@
     <Compile Include="Formmuon.Designer.cs">
       <DependentUpon>Formmuon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formsuasach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formsuasach.Designer.cs">
+      <DependentUpon>Formsuasach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formtimkiemsach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formmuon.resx">
       <DependentUpon>Formmuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formsuasach.resx">
+      <DependentUpon>Formsuasach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formtimkiemsach.resx">
       <DependentUpon>Formtimkiemsach.cs</DependentUpon>

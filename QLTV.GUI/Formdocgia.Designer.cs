@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formdocgia));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDocGia = new System.Windows.Forms.DataGridView();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txttimkiem = new System.Windows.Forms.TextBox();
+            this.cbotktheo = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -41,8 +41,9 @@
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.dtbngaydangky = new System.Windows.Forms.DateTimePicker();
-            this.dtpn = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtpNgayDangKy = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.rdbnu = new System.Windows.Forms.RadioButton();
             this.rdbnam = new System.Windows.Forms.RadioButton();
             this.txtcmnd = new System.Windows.Forms.TextBox();
@@ -55,19 +56,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).BeginInit();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDocGia
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(57, 241);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(784, 218);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDocGia.Location = new System.Drawing.Point(126, 247);
+            this.dgvDocGia.Name = "dgvDocGia";
+            this.dgvDocGia.Size = new System.Drawing.Size(640, 218);
+            this.dgvDocGia.TabIndex = 1;
+            this.dgvDocGia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocGia_CellContentClick);
             // 
             // guna2CustomGradientPanel1
             // 
@@ -75,8 +76,8 @@
             this.guna2CustomGradientPanel1.BorderRadius = 20;
             this.guna2CustomGradientPanel1.BorderThickness = 3;
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2Button2);
-            this.guna2CustomGradientPanel1.Controls.Add(this.textBox1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.comboBox2);
+            this.guna2CustomGradientPanel1.Controls.Add(this.txttimkiem);
+            this.guna2CustomGradientPanel1.Controls.Add(this.cbotktheo);
             this.guna2CustomGradientPanel1.Controls.Add(this.label10);
             this.guna2CustomGradientPanel1.Controls.Add(this.label11);
             this.guna2CustomGradientPanel1.Controls.Add(this.label12);
@@ -103,21 +104,25 @@
             this.guna2Button2.Size = new System.Drawing.Size(90, 35);
             this.guna2Button2.TabIndex = 6;
             this.guna2Button2.Text = "Tìm";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
-            // textBox1
+            // txttimkiem
             // 
-            this.textBox1.Location = new System.Drawing.Point(93, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 20);
-            this.textBox1.TabIndex = 8;
+            this.txttimkiem.Location = new System.Drawing.Point(93, 73);
+            this.txttimkiem.Name = "txttimkiem";
+            this.txttimkiem.Size = new System.Drawing.Size(126, 20);
+            this.txttimkiem.TabIndex = 8;
             // 
-            // comboBox2
+            // cbotktheo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(93, 111);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(126, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cbotktheo.FormattingEnabled = true;
+            this.cbotktheo.Items.AddRange(new object[] {
+            "Tên Độc Giả",
+            "Mã Độc Giả"});
+            this.cbotktheo.Location = new System.Drawing.Point(93, 111);
+            this.cbotktheo.Name = "cbotktheo";
+            this.cbotktheo.Size = new System.Drawing.Size(126, 21);
+            this.cbotktheo.TabIndex = 6;
             // 
             // label10
             // 
@@ -169,7 +174,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(72, 35);
             this.guna2Button1.TabIndex = 6;
             this.guna2Button1.Text = "Thêm";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.guna2Button1.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // guna2Button3
             // 
@@ -189,7 +194,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(72, 35);
             this.guna2Button3.TabIndex = 6;
             this.guna2Button3.Text = "Sửa";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.guna2Button3.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // guna2Button4
             // 
@@ -215,8 +220,8 @@
             // 
             this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel2.Controls.Add(this.label7);
-            this.guna2CustomGradientPanel2.Controls.Add(this.dtbngaydangky);
-            this.guna2CustomGradientPanel2.Controls.Add(this.dtpn);
+            this.guna2CustomGradientPanel2.Controls.Add(this.dtpNgayDangKy);
+            this.guna2CustomGradientPanel2.Controls.Add(this.dtpNgaySinh);
             this.guna2CustomGradientPanel2.Controls.Add(this.rdbnu);
             this.guna2CustomGradientPanel2.Controls.Add(this.rdbnam);
             this.guna2CustomGradientPanel2.Controls.Add(this.txtcmnd);
@@ -234,21 +239,30 @@
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(573, 172);
             this.guna2CustomGradientPanel2.TabIndex = 7;
             // 
-            // dtbngaydangky
+            // label7
             // 
-            this.dtbngaydangky.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtbngaydangky.Location = new System.Drawing.Point(338, 126);
-            this.dtbngaydangky.Name = "dtbngaydangky";
-            this.dtbngaydangky.Size = new System.Drawing.Size(200, 20);
-            this.dtbngaydangky.TabIndex = 16;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(239, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 16);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Quản Lý Độc Giả";
             // 
-            // dtpn
+            // dtpNgayDangKy
             // 
-            this.dtpn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpn.Location = new System.Drawing.Point(338, 47);
-            this.dtpn.Name = "dtpn";
-            this.dtpn.Size = new System.Drawing.Size(200, 20);
-            this.dtpn.TabIndex = 17;
+            this.dtpNgayDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayDangKy.Location = new System.Drawing.Point(338, 126);
+            this.dtpNgayDangKy.Name = "dtpNgayDangKy";
+            this.dtpNgayDangKy.Size = new System.Drawing.Size(200, 20);
+            this.dtpNgayDangKy.TabIndex = 16;
+            // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgaySinh.Location = new System.Drawing.Point(338, 47);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(200, 20);
+            this.dtpNgaySinh.TabIndex = 17;
             // 
             // rdbnu
             // 
@@ -377,15 +391,7 @@
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(37, 34);
             this.guna2CircleButton1.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(239, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 16);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Quản Lý Độc Giả";
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // Formdocgia
             // 
@@ -398,10 +404,11 @@
             this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2CustomGradientPanel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDocGia);
             this.Name = "Formdocgia";
             this.Text = "Formdocgia";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Formdocgia_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDocGia)).EndInit();
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             this.guna2CustomGradientPanel2.ResumeLayout(false);
@@ -411,10 +418,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDocGia;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txttimkiem;
+        private System.Windows.Forms.ComboBox cbotktheo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -423,8 +430,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
-        private System.Windows.Forms.DateTimePicker dtbngaydangky;
-        private System.Windows.Forms.DateTimePicker dtpn;
+        private System.Windows.Forms.DateTimePicker dtpNgayDangKy;
+        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.RadioButton rdbnu;
         private System.Windows.Forms.RadioButton rdbnam;
         private System.Windows.Forms.TextBox txtcmnd;

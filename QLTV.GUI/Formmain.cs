@@ -194,6 +194,7 @@ namespace QLTV
         private void btnlammoi_Click(object sender, EventArgs e)
         {
             ClearText();
+            LoadData();
         }
 
         private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)

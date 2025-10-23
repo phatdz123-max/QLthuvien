@@ -22,8 +22,8 @@ namespace QLTV.DAL.Entities
         [Required]
         [StringLength(100)]
         public string TenDocGia { get; set; }
-
-        public bool? GioiTinh { get; set; }
+        [StringLength(10)]
+        public string GioiTinh { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? NgaySinh { get; set; }

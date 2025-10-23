@@ -54,6 +54,14 @@ namespace QLTV.BUS
             }
         }
 
+        public SACH GetById(string maSach)
+        {
+            using (var db = new Model1())
+            {
+                return db.SACHes.FirstOrDefault(s => s.MaSach == maSach);
+            }
+        }
+
         // 4️⃣ XÓA SÁCH
         public bool Delete(string maSach)
         {
@@ -67,16 +75,66 @@ namespace QLTV.BUS
                 return true;
             }
         }
-
-        // 5️⃣ TÌM KIẾM SÁCH THEO TÊN HOẶC TÁC GIẢ
-        public List<SACH> Search(string keyword)
+        public string UpdateSua(SACH updated)
         {
             using (var db = new Model1())
             {
-                return db.SACHes
-                         .Where(s => s.TenSach.Contains(keyword) ||
-                                     s.TacGia.Contains(keyword))
-                         .ToList();
+                var exist = db.SACHes.FirstOrDefault(s => s.MaSach == updated.MaSach);
+                if (exist == null)
+                    return "KHÔNG TÌM THẤY MÃ SÁCH!";
+
+                exist.TenSach = updated.TenSach;
+                exist.TacGia = updated.TacGia;
+                exist.TheLoai = updated.TheLoai;
+                exist.NhaXuatBan = updated.NhaXuatBan;
+                exist.SoLuong = updated.SoLuong;
+                exist.Gia = updated.Gia;
+                exist.NgayXuatBan = updated.NgayXuatBan;
+
+                db.SaveChanges();
+                return "CẬP NHẬT THÀNH CÔNG!";
+            }
+        }
+
+        public List<SACH> Search(string field, string keyword)
+        {
+            using (var db = new Model1())
+            {
+                if (string.IsNullOrWhiteSpace(keyword))
+                    return db.SACHes.ToList();
+
+                keyword = keyword.ToLower().Trim();
+
+                switch (field)
+                {
+                    case "Mã Sách":
+                        return db.SACHes
+                            .Where(s => s.MaSach.ToLower().Contains(keyword))
+                            .ToList();
+
+                    case "Tên Sách":
+                        return db.SACHes
+                            .Where(s => s.TenSach.ToLower().Contains(keyword))
+                            .ToList();
+
+                    case "Tác Giả":
+                        return db.SACHes
+                            .Where(s => s.TacGia.ToLower().Contains(keyword))
+                            .ToList();
+
+                    case "Thể Loại":
+                        return db.SACHes
+                            .Where(s => s.TheLoai.ToLower().Contains(keyword))
+                            .ToList();
+
+                    case "Nhà Xuất Bản":
+                        return db.SACHes
+                            .Where(s => s.NhaXuatBan.ToLower().Contains(keyword))
+                            .ToList();
+
+                    default:
+                        return db.SACHes.ToList();
+                }
             }
         }
     }
