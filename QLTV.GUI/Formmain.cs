@@ -203,5 +203,10 @@ namespace QLTV
             FormManagerBUS.OpenChildForm(frmmain, this.pnlmain);
             frmmain.menuStrip1.Visible = false;
         }
+
+        private void btnthoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

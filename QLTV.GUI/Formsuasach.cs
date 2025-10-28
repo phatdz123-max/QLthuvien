@@ -96,5 +96,10 @@ namespace QLTV.GUI
         {
             this.Close();
         }
+
+        private void pnlqltv_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -66,6 +66,23 @@ namespace QLTV
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void cboTimKiemTheo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboTimKiemTheo.SelectedItem != null)
+            {
+                lblTieuChi.Text = cboTimKiemTheo.SelectedItem.ToString().ToUpper();
+            }
+            else
+            {
+                lblTieuChi.Text = "";
+            }
+        }
+
+        private void btnTra_Click(object sender, EventArgs e)
+        {
             if (dgvTra.CurrentRow == null)
             {
                 MessageBox.Show("VUI LÒNG CHỌN DÒNG CẦN TRẢ SÁCH!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -78,34 +95,6 @@ namespace QLTV
             {
                 MessageBox.Show("KHÔNG XÁC ĐỊNH ĐƯỢC MÃ MƯỢN!", "LỖI", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
-
-            DialogResult dr = MessageBox.Show(
-                "BẠN CÓ CHẮC MUỐN XÁC NHẬN TRẢ SÁCH NÀY KHÔNG?",
-                "XÁC NHẬN TRẢ SÁCH",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (dr == DialogResult.Yes)
-            {
-                string result = bus.ReturnBook(maMuon);
-                MessageBox.Show(result, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // TẢI LẠI DỮ LIỆU
-                dgvTra.DataSource = bus.GetAll();
-            }
-        }
-
-        private void cboTimKiemTheo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboTimKiemTheo.SelectedItem != null)
-            {
-                lblTieuChi.Text =cboTimKiemTheo.SelectedItem.ToString().ToUpper();
-            }
-            else
-            {
-                lblTieuChi.Text = "";
             }
         }
     }

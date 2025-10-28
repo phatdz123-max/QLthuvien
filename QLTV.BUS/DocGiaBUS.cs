@@ -14,8 +14,6 @@ namespace QLTV.BUS
         {
             _context = new Model1();
         }
-
-        // 🔹 LẤY DANH SÁCH ĐỘC GIẢ (HIỂN THỊ TRỰC TIẾP NAM / NỮ)
         public List<object> GetAllForDisplay()
         {
             return _context.DOCGIAs
@@ -23,21 +21,17 @@ namespace QLTV.BUS
                 {
                     x.MaDocGia,
                     x.TenDocGia,
-                    GioiTinh = x.GioiTinh,  // GIỜ ĐÃ LÀ STRING "Nam" / "Nữ"
+                    GioiTinh = x.GioiTinh, 
                     x.NgaySinh,
                     x.SoCMND,
                     x.NgayDangKy
                 })
                 .ToList<object>();
         }
-
-        // 🔹 LẤY TẤT CẢ DẠNG GỐC
         public List<DOCGIA> GetAll()
         {
             return _context.DOCGIAs.ToList();
         }
-
-        // 🔹 THÊM MỚI
         public string Add(DOCGIA dg)
         {
             if (string.IsNullOrWhiteSpace(dg.MaDocGia) || string.IsNullOrWhiteSpace(dg.TenDocGia))

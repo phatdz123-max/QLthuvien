@@ -33,7 +33,6 @@ namespace QLTV.BUS
             }
         }
 
-        // 3️⃣ CẬP NHẬT THÔNG TIN SÁCH
         public bool Update(SACH sach)
         {
             using (var db = new Model1())

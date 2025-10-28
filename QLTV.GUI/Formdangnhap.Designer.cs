@@ -65,6 +65,7 @@
             this.txtmatkhau.Name = "txtmatkhau";
             this.txtmatkhau.Size = new System.Drawing.Size(132, 20);
             this.txtmatkhau.TabIndex = 2;
+            this.txtmatkhau.UseSystemPasswordChar = true;
             // 
             // txttaikhoan
             // 
@@ -86,6 +87,7 @@
             this.btnthoat.Size = new System.Drawing.Size(115, 36);
             this.btnthoat.TabIndex = 1;
             this.btnthoat.Text = "Thoát";
+            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
             // btndangnhap
             // 

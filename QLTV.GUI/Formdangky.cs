@@ -66,5 +66,15 @@ namespace QLTV
                 this.Close();
             }
         }
+
+        private void btnquaylai_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Formdangnhap frmLogin = new Formdangnhap();
+            frmLogin.Show();
+            frmLogin.FormClosed += (s, args) => this.Close();
+        }
     }
-}
+    }
+

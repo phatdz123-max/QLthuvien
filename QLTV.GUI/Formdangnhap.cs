@@ -60,6 +60,12 @@ namespace QLTV
         {
             Formdangky frm = new Formdangky();
             frm.ShowDialog();
+            this.Hide();
+        }
+
+        private void btnthoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

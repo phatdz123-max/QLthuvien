@@ -11,14 +11,11 @@ namespace QLTV.BUS
         private static Form currentForm = null;
 
         public static void OpenChildForm(Form childForm, Panel container)
-        {
-            // NẾU ĐÃ CÓ FORM KHÁC ĐANG HIỂN THỊ THÌ ĐÓNG LẠI
+        { 
             if (currentForm != null)
                 currentForm.Close();
 
             currentForm = childForm;
-
-            // CẤU HÌNH CHO FORM CON
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -29,8 +26,6 @@ namespace QLTV.BUS
             // THÊM FORM MỚI VÀO PANEL
             container.Controls.Add(childForm);
             container.Tag = childForm;
-
-            // HIỂN THỊ
             childForm.BringToFront();
             childForm.Show();
         }

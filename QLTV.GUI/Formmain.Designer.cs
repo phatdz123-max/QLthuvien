@@ -185,6 +185,7 @@
             this.btnthoat.Size = new System.Drawing.Size(70, 37);
             this.btnthoat.TabIndex = 13;
             this.btnthoat.Text = "Thoát";
+            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
             // btnxoa
             // 

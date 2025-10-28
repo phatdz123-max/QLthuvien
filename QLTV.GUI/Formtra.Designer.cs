@@ -107,7 +107,7 @@
             this.btnXoa.Size = new System.Drawing.Size(87, 40);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Trả Sách";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            this.btnXoa.Click += new System.EventHandler(this.btnTra_Click);
             // 
             // label4
             // 

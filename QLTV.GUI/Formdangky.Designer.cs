@@ -68,6 +68,7 @@
             this.txtxacnhanmk.Name = "txtxacnhanmk";
             this.txtxacnhanmk.Size = new System.Drawing.Size(132, 20);
             this.txtxacnhanmk.TabIndex = 2;
+            this.txtxacnhanmk.UseSystemPasswordChar = true;
             // 
             // txtmatkhau
             // 
@@ -75,6 +76,7 @@
             this.txtmatkhau.Name = "txtmatkhau";
             this.txtmatkhau.Size = new System.Drawing.Size(132, 20);
             this.txtmatkhau.TabIndex = 2;
+            this.txtmatkhau.UseSystemPasswordChar = true;
             // 
             // txttaikhoan
             // 
@@ -96,6 +98,7 @@
             this.btnquaylai.Size = new System.Drawing.Size(115, 36);
             this.btnquaylai.TabIndex = 1;
             this.btnquaylai.Text = "Quay Lại";
+            this.btnquaylai.Click += new System.EventHandler(this.btnquaylai_Click);
             // 
             // btndangky
             // 

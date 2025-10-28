@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlqltv = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnxacnhan = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dtpngayxb = new System.Windows.Forms.DateTimePicker();
             this.txttheloai = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@
             this.txtmasach = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnxacnhan = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.pnlqltv.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +80,27 @@
             this.pnlqltv.Name = "pnlqltv";
             this.pnlqltv.Size = new System.Drawing.Size(788, 206);
             this.pnlqltv.TabIndex = 13;
+            this.pnlqltv.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlqltv_Paint);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(444, 172);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Thoát";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnthoat);
+            // 
+            // btnxacnhan
+            // 
+            this.btnxacnhan.Location = new System.Drawing.Point(184, 172);
+            this.btnxacnhan.Name = "btnxacnhan";
+            this.btnxacnhan.Size = new System.Drawing.Size(75, 23);
+            this.btnxacnhan.TabIndex = 22;
+            this.btnxacnhan.Text = "Xác Nhận";
+            this.btnxacnhan.UseVisualStyleBackColor = true;
+            this.btnxacnhan.Click += new System.EventHandler(this.button1_Click);
             // 
             // label9
             // 
@@ -230,26 +251,6 @@
             this.label1.Size = new System.Drawing.Size(60, 16);
             this.label1.TabIndex = 12;
             this.label1.Text = "Mã Sách";
-            // 
-            // btnxacnhan
-            // 
-            this.btnxacnhan.Location = new System.Drawing.Point(184, 172);
-            this.btnxacnhan.Name = "btnxacnhan";
-            this.btnxacnhan.Size = new System.Drawing.Size(75, 23);
-            this.btnxacnhan.TabIndex = 22;
-            this.btnxacnhan.Text = "Xác Nhận";
-            this.btnxacnhan.UseVisualStyleBackColor = true;
-            this.btnxacnhan.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(444, 172);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnthoat);
             // 
             // Formsuasach
             // 
